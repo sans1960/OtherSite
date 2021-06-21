@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav x-data="{show:false}" class="flex flex-wrap items-center justify-between p-6 bg-gray-500">
+        <div class="flex items-center flex-shrink-0 mr-6 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+          <span class="ml-2 text-xl font-semibold tracking-tight">OtherSite</span>
+        </div>
+        <div class="block md:hidden">
+          <button @click="show=!show" class="flex items-center px-3 py-2 text-gray-100 border border-gray-200 rounded hover:text-white hover:border-white">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }" class="flex-grow block w-full md:flex md:justify-end md:w-auto">
+          <div>
+            <a href="index.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Home</a>
+             <a href="services.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Services</a>
+             <a href="products.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Products</a>
+             <a href="contact.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Contact</a>
+          </div>
+        </div>
+      </nav>
+      <section class="mt-4 mb-4"  >
+        <div class="flex flex-col items-center justify-between min-h-screen bg-gray-100 min-w-screen md:flex-row">
+            <div>
+              <div class="flex flex-col items-center max-w-md px-8 py-6 space-y-5 bg-white rounded-xl">
+                <h3 class="text-xl font-bold text-gray-900 ">Service One</h3>
+                <img class="w-full rounded-md" src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNlcnZpY2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="motivation" />
+                <p class="leading-relaxed text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, dolorum error. Facere nihil saepe doloribus officia ipsam dicta blanditiis. Laborum iusto, veritatis dolorum molestias reprehenderit dolor dolorem eum rem, magnam assumenda, unde quo debitis cupiditate voluptas numquam voluptates excepturi cumque officia? Iure aspernatur est eveniet molestiae non quas fuga! Sit.</p>
+                <div
+                 x-data="{ 'showModal': false }"
+                 @keydown.escape="showModal = false"
+                 >
+                <button class="px-24 py-4 text-sm text-white bg-gray-900 rounded-md focus:border-transparent" @click="showModal = true" >Details</button>
+                <div
+                class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                x-show="showModal"
+            >
+                <!-- Modal inner -->
+                <div
+                    class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
+                    @click.away="showModal = false"
+                    x-transition:enter="motion-safe:ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                >
+                    <!-- Title / Close-->
+                    <div class="flex items-center justify-between">
+                        <h5 class="mr-3 text-black max-w-none">Title</h5>
+        
+                        <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+        
+                    <!-- content -->
+                    <div>
+                      <h3 class="text-2xl text-center">Service One</h3>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in eaque dicta distinctio vel aut quisquam alias iusto ea temporibus voluptatem itaque asperiores, quod esse rem omnis quae veniam nostrum et cum commodi officia perferendis enim nulla. Aliquam quod, harum temporibus, beatae sequi unde iure accusamus quis voluptatem veritatis alias sit amet officiis placeat fugiat quas delectus laboriosam nostrum adipisci reiciendis! Sunt beatae quas odit, impedit debitis earum distinctio facere molestias commodi consequuntur cumque libero. Maxime ipsam, error enim voluptates sequi cupiditate saepe id laborum repudiandae consectetur qui illo exercitationem quasi explicabo deserunt neque eaque alias quibusdam reiciendis, blanditiis at molestiae, iure nulla adipisci! Fugit eligendi iusto reprehenderit inventore, incidunt iste qui deserunt maiores? Obcaecati dicta at eius, similique animi totam. Suscipit possimus numquam nobis. Ab tenetur, nisi numquam expedita amet provident nulla vitae quo illum modi illo earum exercitationem ad beatae velit hic excepturi nobis consequuntur eius quisquam nihil doloribus, iste sunt repellendus? Asperiores maxime aut, molestiae eveniet tempora laboriosam quos hic repellat. Soluta eius asperiores iure ratione possimus quisquam et explicabo doloribus rem tempore repellat dicta, aperiam quam facilis, voluptatum enim doloremque fuga. Quisquam nam vel dolorum repellat, ut eveniet quae officiis enim odio, debitis cumque sed voluptatem?</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+              </div>
+            </div>
+            <div>
+                <div class="flex flex-col items-center max-w-md px-8 py-6 space-y-5 bg-white rounded-xl">
+                  <h3 class="text-xl font-bold text-gray-900 ">Service Two</h3>
+                  <img class="w-full rounded-md" src="https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="motivation" />
+                  <p class="leading-relaxed text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, dolorum error. Facere nihil saepe doloribus officia ipsam dicta blanditiis. Laborum iusto, veritatis dolorum molestias reprehenderit dolor dolorem eum rem, magnam assumenda, unde quo debitis cupiditate voluptas numquam voluptates excepturi cumque officia? Iure aspernatur est eveniet molestiae non quas fuga! Sit.</p>
+                  <div
+                  x-data="{ 'showModal': false }"
+                  @keydown.escape="showModal = false"
+                  >
+                  <button class="px-24 py-4 text-sm text-white bg-gray-900 rounded-md focus:border-transparent" @click="showModal = true">Details</button>
+                  <div
+                  class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                  x-show="showModal"
+              >
+                  <!-- Modal inner -->
+                  <div
+                      class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
+                      @click.away="showModal = false"
+                      x-transition:enter="motion-safe:ease-out duration-300"
+                      x-transition:enter-start="opacity-0 scale-90"
+                      x-transition:enter-end="opacity-100 scale-100"
+                  >
+                      <!-- Title / Close-->
+                      <div class="flex items-center justify-between">
+                          <h5 class="mr-3 text-black max-w-none">Title</h5>
+          
+                          <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                          </button>
+                      </div>
+          
+                      <!-- content -->
+                      <div>
+                        <h3 class="text-2xl text-center">Service Two</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in eaque dicta distinctio vel aut quisquam alias iusto ea temporibus voluptatem itaque asperiores, quod esse rem omnis quae veniam nostrum et cum commodi officia perferendis enim nulla. Aliquam quod, harum temporibus, beatae sequi unde iure accusamus quis voluptatem veritatis alias sit amet officiis placeat fugiat quas delectus laboriosam nostrum adipisci reiciendis! Sunt beatae quas odit, impedit debitis earum distinctio facere molestias commodi consequuntur cumque libero. Maxime ipsam, error enim voluptates sequi cupiditate saepe id laborum repudiandae consectetur qui illo exercitationem quasi explicabo deserunt neque eaque alias quibusdam reiciendis, blanditiis at molestiae, iure nulla adipisci! Fugit eligendi iusto reprehenderit inventore, incidunt iste qui deserunt maiores? Obcaecati dicta at eius, similique animi totam. Suscipit possimus numquam nobis. Ab tenetur, nisi numquam expedita amet provident nulla vitae quo illum modi illo earum exercitationem ad beatae velit hic excepturi nobis consequuntur eius quisquam nihil doloribus, iste sunt repellendus? Asperiores maxime aut, molestiae eveniet tempora laboriosam quos hic repellat. Soluta eius asperiores iure ratione possimus quisquam et explicabo doloribus rem tempore repellat dicta, aperiam quam facilis, voluptatum enim doloremque fuga. Quisquam nam vel dolorum repellat, ut eveniet quae officiis enim odio, debitis cumque sed voluptatem?</p>
+  
+  
+  
+                      </div>
+                  </div>
+              </div>
+          </div>  
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-col items-center max-w-md px-8 py-6 space-y-5 bg-white rounded-xl">
+                  <h3 class="text-xl font-bold text-gray-900 ">Service Three</h3>
+                  <img class="w-full rounded-md" src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="motivation" />
+                  <p class="leading-relaxed text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, dolorum error. Facere nihil saepe doloribus officia ipsam dicta blanditiis. Laborum iusto, veritatis dolorum molestias reprehenderit dolor dolorem eum rem, magnam assumenda, unde quo debitis cupiditate voluptas numquam voluptates excepturi cumque officia? Iure aspernatur est eveniet molestiae non quas fuga! Sit.</p>
+                  <div
+                  x-data="{ 'showModal': false }"
+                  @keydown.escape="showModal = false"
+                  >
+                  <button class="px-24 py-4 text-sm text-white bg-gray-900 rounded-md focus:border-transparent"  @click="showModal = true">Details</button>
+                  <div
+                  class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                  x-show="showModal"
+              >
+                  <!-- Modal inner -->
+                  <div
+                      class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
+                      @click.away="showModal = false"
+                      x-transition:enter="motion-safe:ease-out duration-300"
+                      x-transition:enter-start="opacity-0 scale-90"
+                      x-transition:enter-end="opacity-100 scale-100"
+                  >
+                      <!-- Title / Close-->
+                      <div class="flex items-center justify-between">
+                          <h5 class="mr-3 text-black max-w-none">Title</h5>
+          
+                          <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                          </button>
+                      </div>
+          
+                      <!-- content -->
+                      <div>
+                        <h3 class="text-2xl text-center">Service Three</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui in eaque dicta distinctio vel aut quisquam alias iusto ea temporibus voluptatem itaque asperiores, quod esse rem omnis quae veniam nostrum et cum commodi officia perferendis enim nulla. Aliquam quod, harum temporibus, beatae sequi unde iure accusamus quis voluptatem veritatis alias sit amet officiis placeat fugiat quas delectus laboriosam nostrum adipisci reiciendis! Sunt beatae quas odit, impedit debitis earum distinctio facere molestias commodi consequuntur cumque libero. Maxime ipsam, error enim voluptates sequi cupiditate saepe id laborum repudiandae consectetur qui illo exercitationem quasi explicabo deserunt neque eaque alias quibusdam reiciendis, blanditiis at molestiae, iure nulla adipisci! Fugit eligendi iusto reprehenderit inventore, incidunt iste qui deserunt maiores? Obcaecati dicta at eius, similique animi totam. Suscipit possimus numquam nobis. Ab tenetur, nisi numquam expedita amet provident nulla vitae quo illum modi illo earum exercitationem ad beatae velit hic excepturi nobis consequuntur eius quisquam nihil doloribus, iste sunt repellendus? Asperiores maxime aut, molestiae eveniet tempora laboriosam quos hic repellat. Soluta eius asperiores iure ratione possimus quisquam et explicabo doloribus rem tempore repellat dicta, aperiam quam facilis, voluptatum enim doloremque fuga. Quisquam nam vel dolorum repellat, ut eveniet quae officiis enim odio, debitis cumque sed voluptatem?</p>
+  
+  
+  
+                      </div>
+                  </div>
+              </div>
+          </div>   
+                </div>
+              </div>
+          </div>
+  
+        <!-- dialog -->
+      
+      </section>
+      <footer class="p-4 text-center text-white bg-gray-500">
+        <p>Albert Sans-2021</p>
+
+      </footer>    
+</body>
+</html>

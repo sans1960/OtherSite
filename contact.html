@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav x-data="{show:false}" class="flex flex-wrap items-center justify-between p-6 bg-gray-500">
+        <div class="flex items-center flex-shrink-0 mr-6 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+          <span class="ml-2 text-xl font-semibold tracking-tight">OtherSite</span>
+        </div>
+        <div class="block md:hidden">
+          <button @click="show=!show" class="flex items-center px-3 py-2 text-gray-100 border border-gray-200 rounded hover:text-white hover:border-white">
+            <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div @click.away="show = false" :class="{ 'block': show, 'hidden': !show }" class="flex-grow block w-full md:flex md:justify-end md:w-auto">
+          <div>
+            <a href="index.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Home</a>
+             <a href="services.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Services</a>
+             <a href="products.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Products</a>
+             <a href="contact.html" class="block px-4 py-2 mt-4 text-sm leading-none text-white border-white rounded md:inline-block hover:border-transparent hover:bg-green-500 md:mt-0">Contact</a>
+          </div>
+        </div>
+      </nav>
+      <section class="mt-2">
+        <div class="container mx-auto border-b-8 border-gray-700">
+          <div class="flex flex-col w-full text-center">
+            <h1 class="mb-4 text-2xl font-medium tracking-widest text-gray-900 title-font">OUR TEAM</h1>
+            <p class="mx-auto text-base leading-relaxed lg:w-2/3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id inventore error corrupti dignissimos enim sit expedita nihil non, officia accusamus.</p>
+          </div>
+          <div class="flex flex-wrap m-2">
+            <div class="p-4 lg:w-1/2">
+              <div class="flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left">
+                <img alt="team" class="flex-shrink-0 object-cover object-center w-48 h-48 mb-4 rounded-lg sm:mb-0" src="https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-creador-de-avatar-masculino.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="text-lg font-medium text-gray-900 title-font">Joe Smith</h2>
+                  <h3 class="mb-3 text-gray-500">UI Developer</h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia!.</p>
+                  <span class="inline-flex">
+                    <a href="" class="text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left">
+                <img alt="team" class="flex-shrink-0 object-cover object-center w-48 h-48 mb-4 rounded-lg sm:mb-0" src="https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-creador-de-avatar-masculino.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="text-lg font-medium text-gray-900 title-font">Joe Smith</h2>
+                  <h3 class="mb-3 text-gray-500">UI Developer</h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia!.</p>
+                  <span class="inline-flex">
+                    <a href="" class="text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left">
+                <img alt="team" class="flex-shrink-0 object-cover object-center w-48 h-48 mb-4 rounded-lg sm:mb-0" src="https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-creador-de-avatar-masculino.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="text-lg font-medium text-gray-900 title-font">Joe Smith</h2>
+                  <h3 class="mb-3 text-gray-500">UI Developer</h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia!.</p>
+                  <span class="inline-flex">
+                    <a href="" class="text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 lg:w-1/2">
+              <div class="flex flex-col items-center justify-center h-full text-center sm:flex-row sm:justify-start sm:text-left">
+                <img alt="team" class="flex-shrink-0 object-cover object-center w-48 h-48 mb-4 rounded-lg sm:mb-0" src="https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-creador-de-avatar-masculino.jpg">
+                <div class="flex-grow sm:pl-8">
+                  <h2 class="text-lg font-medium text-gray-900 title-font">Joe Smith</h2>
+                  <h3 class="mb-3 text-gray-500">UI Developer</h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quia!.</p>
+                  <span class="inline-flex">
+                    <a href="" class="text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                      </svg>
+                    </a>
+                    <a href="" class="ml-2 text-gray-500">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                      </svg>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>    
+         
+        </div>
+        </div>
+        <div class="container flex justify-center p-20 mx-auto mt-4 border-b-8 border-gray-700">
+          <div
+          x-data="{ 'showModal': false }"
+          @keydown.escape="showModal = false"
+          >
+              <button @click="showModal = true" class="px-4 py-2 text-white bg-green-700 rounded-lg">Contact</button>
+              <div
+                  class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                  x-show="showModal"
+              >
+                  <!-- Modal inner -->
+                  <div
+                      class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
+                      @click.away="showModal = false"
+                      x-transition:enter="motion-safe:ease-out duration-300"
+                      x-transition:enter-start="opacity-0 scale-90"
+                      x-transition:enter-end="opacity-100 scale-100"
+                  >
+                      <!-- Title / Close-->
+                      <div class="flex items-center justify-between">
+                          <h5 class="mr-3 text-black max-w-none">Contact Form</h5>
+          
+                          <button type="button" class="z-50 cursor-pointer" @click="showModal = false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                          </button>
+                      </div>
+          
+                      <!-- content -->
+                      <div>
+                        <form action="" method="post">
+                          <div class="flex flex-col w-full">
+                            <h2 class="mb-1 text-lg font-medium text-gray-900 title-font">Lorem, ipsum.</h2>
+                            <p class="mb-5 leading-relaxed text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, vitae.</p>
+                            <div class="mb-4 ">
+                              <label for="name" class="text-sm leading-7 text-gray-600">Name</label>
+                              <input type="text" id="name" name="name" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                            </div>
+                            <div class="mb-4 ">
+                              <label for="email" class="text-sm leading-7 text-gray-600">Email</label>
+                              <input type="email" id="email" name="email" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200">
+                            </div>
+                            <div class="mb-4 ">
+                              <label for="message" class="text-sm leading-7 text-gray-600">Message</label>
+                              <textarea id="message" name="message" class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"></textarea>
+                            </div>
+                            <button class="px-6 py-2 text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Button</button>
+                            <p class="mt-3 text-xs text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, dolores aliquid nulla saepe porro magnam..</p>
+                          </div>
+                        
+                        </form>
+                       
+                        
+  
+  
+                      </div>
+                  </div>
+              </div> 
+        </div>
+        </div>
+        <div class="container grid grid-cols-1 gap-4 mx-auto mb-2 md:grid-cols-2">
+          <div class="mt-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.838268453267!2d2.249102014767238!3d41.76714468033065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4db1048586275%3A0xc2d2d7217c08b30b!2sCarrer%20del%20Pont%2C%2015%2C%2008591%20Aiguafreda%2C%20Barcelona!5e0!3m2!1sca!2ses!4v1624287943668!5m2!1sca!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="flex flex-col items-center justify-center mt-5">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 p-2 text-center text-white bg-yellow-500 rounded-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h1 class="mt-3 text-3xl font-bold text-center">OtherSite</h1>
+            <div class="flex items-center justify-between mt-5 flex-rows">
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 p-2 text-center text-white bg-yellow-500 rounded-full" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+              </a>
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 p-2 ml-2 text-center text-white bg-yellow-500 rounded-full" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </a>
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 p-2 ml-2 text-center text-white bg-yellow-500 rounded-full" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 p-2 ml-2 text-center text-white bg-yellow-500 rounded-full" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+              
+          </div>
+
+        </div>
+      </section>
+      <footer class="p-4 text-center text-white bg-gray-500">
+        <p>Albert Sans-2021</p>
+
+      </footer>    
+</body>
+</html>
